@@ -1,14 +1,10 @@
-var firebaseConfig = {
-  // Your Firebase configuration goes here
-  apiKey: "AIzaSyAzMFegDdgSM8gsCmZtMdMFLlGqv_cRPOQ",
-  authDomain: "fire-chat-sai.firebaseapp.com",
-  databaseURL: "https://fire-chat-sai-default-rtdb.firebaseio.com/",
-  projectId: "fire-chat-sai",
-  storageBucket: "fire-chat-sai.appspot.com",
-  messagingSenderId: "1034963106910",
-  appId: "1:1034963106910:web:923d259f21adc2a53988cf"
-};
+// Get references to HTML elements
+var messageForm = document.getElementById("message-form");
+var messageInput = document.getElementById("message-input");
+var sendButton = document.getElementById("send-button");
+var messageList = document.getElementById("messages");
 
+<<<<<<< HEAD
 firebase.initializeApp(config);
 
 var currentUser = null;
@@ -112,3 +108,38 @@ sendMessageButton.addEventListener("click", function (event) {
   event.preventDefault();
   sendMessage();
 });
+=======
+// Get a reference to the Firebase database
+var database = firebase.database();
+
+// Set up a listener to listen for new messages
+database.ref("messages").on("child_added", function(snapshot) {
+  var message = snapshot.val();
+  var li = document.createElement("li");
+  li.textContent = message.text;
+  messageList.appendChild(li);
+});
+
+// Handle form submission
+messageForm.addEventListener("submit", function(event) {
+  event.preventDefault();
+  var text = messageInput
+// Get the current date and time
+var now = new Date();
+var timestamp = now.toLocaleString();
+
+// Save the message to the database
+database.ref("messages").push({
+text: text,
+timestamp: timestamp
+});
+
+// Clear the input field
+messageInput.value = "";
+});
+
+// Clear the message list when the page loads
+window.onload = function() {
+messageList.innerHTML = "";
+};
+>>>>>>> parent of 4911528 (fix errors)
