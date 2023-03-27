@@ -1,20 +1,26 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <title>Firebase Chat App</title>
-    <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
-    <div id="chat-container">
-      <ul id="message-list"></ul>
-      <form id="message-form">
-        <input type="text" id="message-input" placeholder="Type your message...">
-        <button type="submit">Send</button>
-      </form>
-    </div>
-    <script src="https://www.gstatic.com/firebasejs/8.8.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.8.0/firebase-database.js"></script>
-    <script src="chat.js"></script>
-  </body>
+<head>
+  <title>Firebase Chat</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="chat-container">
+    <div class="messages" id="message-list"></div>
+    <form class="message-form" id="message-form">
+      <input type="text" id="message" placeholder="Type your message...">
+      <input type="file" id="image" accept="image/*">
+      <button type="submit">Send</button>
+    </form>
+  </div>
+
+  <script src="https://www.gstatic.com/firebasejs/9.4.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.4.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.4.0/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.4.0/firebase-storage.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.4.0/firebase-analytics.js"></script>
+  <script src="chat.js"></script>
+</body>
 </html>
