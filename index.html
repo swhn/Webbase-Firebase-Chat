@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Chat App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Add stylesheets -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Add Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/8.4.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.2/firebase-database.js"></script>
+  </head>
+  <body>
+    <header>
+      <h1>Chat App</h1>
+    </header>
+    <main>
+      <ul id="messages"></ul>
+      <form id="message-form">
+        <input type="text" id="message-input" placeholder="Type your message here...">
+        <button type="submit" id="send-button">Send</button>
+      </form>
+    </main>
+    <!-- Add Firebase configuration -->
+    <script>
+      var firebaseConfig = {
+        apiKey: "AIzaSyAzMFegDdgSM8gsCmZtMdMFLlGqv_cRPOQ",
+        authDomain: "fire-chat-sai.firebaseapp.com",
+        databaseURL: "https://fire-chat-sai-default-rtdb.firebaseio.com/",
+        projectId: "fire-chat-sai",
+        storageBucket: "fire-chat-sai.appspot.com",
+        messagingSenderId: "1034963106910",
+        appId: "1:1034963106910:web:923d259f21adc2a53988cf"
+      };
+      firebase.initializeApp(firebaseConfig);
+    </script>
+    <!-- Add chat app logic -->
+    <script src="chat.js"></script>
+  </body>
+</html>
