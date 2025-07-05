@@ -1,6 +1,6 @@
 var firebaseConfig = {
   // Your Firebase configuration goes here
-  apiKey: "AIzaSyAzMFegDdgSM8gsCmZtMdMFLlGqv_cRPOQ",
+  apiKey: "YOUR_FIREBASE_API_HERE",
   authDomain: "fire-chat-sai.firebaseapp.com",
   databaseURL: "https://fire-chat-sai-default-rtdb.firebaseio.com/",
   projectId: "fire-chat-sai",
